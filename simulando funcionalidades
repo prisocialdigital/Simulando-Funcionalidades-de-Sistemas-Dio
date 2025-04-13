@@ -1,26 +1,21 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Main {
     public static void main(String[] args) {
-        // Entrada de dados
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Digite o nome de usuário: ");
-        String usuario = scanner.nextLine();
-
-        System.out.print("Digite a senha: ");
-        String senha = scanner.nextLine();
-
+        double valorDolar = scanner.nextDouble();
         scanner.close();
+        
+        double cotacao = 5.00;
+        double valorReal = valorDolar * cotacao;
 
-        // Simulando autenticação
-        String usuarioCorreto = "admin";
-        String senhaCorreta = "1234";
+        // Formatando o valor com duas casas decimais
+        DecimalFormat df = new DecimalFormat("0.00");
 
-        if (usuario.equals(usuarioCorreto) && senha.equals(senhaCorreta)) {
-            System.out.println("Login bem-sucedido!");
-        } else {
-            System.out.println("Usuário ou senha incorretos.");
-        }
+        System.out.println("Valor em reais: R$" + df.format(valorReal));
     }
 }
+
+
+
